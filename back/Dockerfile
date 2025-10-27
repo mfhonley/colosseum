@@ -26,6 +26,7 @@ COPY --from=builder /usr/local/bin /usr/local/bin
 # Copy application code
 COPY app/ ./app/
 COPY scripts/ ./scripts/
+COPY static/ ./static/
 
 # Create directories for data
 RUN mkdir -p /data /data/nft_images

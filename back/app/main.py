@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 import logging
+import os
 
 from app.core.config import get_settings
 from app.models.database import init_db
@@ -33,6 +35,11 @@ app.add_middleware(
 
 # Include API routes
 app.include_router(router, prefix="/api", tags=["api"])
+
+# Mount static files for token assets
+static_path = os.path.join(os.path.dirname(__file__), "..", "static")
+if os.path.exists(static_path):
+    app.mount("/static", StaticFiles(directory=static_path), name="static")
 
 
 @app.on_event("startup")

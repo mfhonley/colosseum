@@ -1,0 +1,38 @@
+{
+  "name": "WaterCredits",
+  "symbol": "WC",
+  "description": "WaterCredits (WC) is a blockchain-based water management token on Solana. Each token represents 1 liter of water usage rights. Tokens are minted as monthly quotas and automatically burned when water is consumed, creating a transparent and efficient water resource management system.",
+  "image": "https://raw.githubusercontent.com/sucount/assets/main/watercredits-logo.png",
+  "external_url": "https://sucount.io",
+  "attributes": [
+    {
+      "trait_type": "Token Type",
+      "value": "Water Management"
+    },
+    {
+      "trait_type": "Blockchain",
+      "value": "Solana"
+    },
+    {
+      "trait_type": "Decimals",
+      "value": "6"
+    },
+    {
+      "trait_type": "Use Case",
+      "value": "Water Quota Management"
+    },
+    {
+      "trait_type": "Supply Model",
+      "value": "Deflationary (Burn on Use)"
+    }
+  ],
+  "properties": {
+    "category": "Utility Token",
+    "creators": [
+      {
+        "address": "5DS8ak8SdJxcHJQBuQRj38MGxvMUPWv3wmx2L1n8pBPt",
+        "share": 100
+      }
+    ]
+  }
+}

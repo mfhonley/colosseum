@@ -45,6 +45,9 @@ class WaterCreditsService:
     DECIMALS = 6  # Как USDC (можно иметь 0.000001 WC)
     TOKEN_NAME = "WaterCredits"
     TOKEN_SYMBOL = "WC"
+    TOKEN_DESCRIPTION = "Blockchain-based water management token. 1 WC = 1 liter of water usage rights."
+    TOKEN_IMAGE_URL = "http://localhost:8000/static/watercredits-logo.svg"
+    TOKEN_METADATA_URL = "http://localhost:8000/static/watercredits-metadata.json"
 
     def __init__(self):
         self.client = Client(settings.solana_rpc_url, commitment=Confirmed)
@@ -420,6 +423,43 @@ class WaterCreditsService:
         """Set WaterCredits mint address (if already created)"""
         self.watercredits_mint = Pubkey.from_string(mint_address)
         logger.info(f"💧 WaterCredits mint set: {mint_address}")
+
+    def get_token_info(self) -> Dict:
+        """
+        Get complete token information with metadata
+
+        Returns:
+            {
+                "name": "WaterCredits",
+                "symbol": "WC",
+                "decimals": 6,
+                "description": "...",
+                "image": "...",
+                "mint_address": "...",
+                "metadata_url": "...",
+                "supply_model": "deflationary"
+            }
+        """
+        return {
+            "name": self.TOKEN_NAME,
+            "symbol": self.TOKEN_SYMBOL,
+            "decimals": self.DECIMALS,
+            "description": self.TOKEN_DESCRIPTION,
+            "image": self.TOKEN_IMAGE_URL,
+            "metadata_url": self.TOKEN_METADATA_URL,
+            "mint_address": str(self.watercredits_mint) if self.watercredits_mint else None,
+            "supply_model": "deflationary",
+            "use_case": "Water Quota Management",
+            "blockchain": "Solana",
+            "network": settings.solana_network,
+            "features": [
+                "1 WC = 1 Liter of water",
+                "Minted as monthly quotas",
+                "Automatically burned on water usage",
+                "Transparent blockchain tracking",
+                "Transferable between farms"
+            ]
+        }
 
 
 # Singleton

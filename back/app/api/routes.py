@@ -384,3 +384,27 @@ async def get_watercredits_balance(farm_id: int):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to get balance: {str(e)}"
         )
+
+
+@router.get("/watercredits/info")
+async def get_token_info():
+    """
+    Get complete WaterCredits token information including metadata
+
+    Returns full token details:
+    - Name, symbol, decimals
+    - Description and use case
+    - Logo image URL
+    - Metadata JSON URL
+    - Current mint address
+    - Token features and properties
+    """
+    try:
+        info = watercredits_service.get_token_info()
+        return info
+    except Exception as e:
+        logger.error(f"Error getting token info: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to get token info: {str(e)}"
+        )

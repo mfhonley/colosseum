@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Gradient for background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gradient for water droplet -->
+    <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGradient)"/>
+
+  <!-- Main water droplet -->
+  <path d="M100 40 C100 40, 70 80, 70 110 C70 130, 83 145, 100 145 C117 145, 130 130, 130 110 C130 80, 100 40, 100 40 Z"
+        fill="#ffffff"
+        opacity="0.95"/>
+
+  <!-- Highlight on droplet (makes it look 3D) -->
+  <ellipse cx="90" cy="85" rx="12" ry="18" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Small shine dot -->
+  <circle cx="85" cy="75" r="4" fill="#ffffff" opacity="0.8"/>
+
+  <!-- WC Text -->
+  <text x="100" y="115"
+        font-family="Arial, sans-serif"
+        font-size="32"
+        font-weight="bold"
+        fill="#3b82f6"
+        text-anchor="middle">
+    WC
+  </text>
+
+  <!-- Waves at bottom -->
+  <g opacity="0.8">
+    <path d="M40 165 Q50 160, 60 165 T80 165 T100 165 T120 165 T140 165 T160 165"
+          stroke="#ffffff"
+          stroke-width="3"
+          fill="none"
+          stroke-linecap="round"/>
+    <path d="M40 175 Q50 170, 60 175 T80 175 T100 175 T120 175 T140 175 T160 175"
+          stroke="#ffffff"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          opacity="0.6"/>
+  </g>
+
+  <!-- Small water drops around -->
+  <circle cx="50" cy="60" r="4" fill="#ffffff" opacity="0.6"/>
+  <circle cx="150" cy="70" r="3" fill="#ffffff" opacity="0.5"/>
+  <circle cx="140" cy="50" r="3" fill="#ffffff" opacity="0.7"/>
+  <circle cx="60" cy="140" r="3" fill="#ffffff" opacity="0.6"/>
+</svg>
