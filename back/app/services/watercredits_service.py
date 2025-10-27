@@ -46,8 +46,8 @@ class WaterCreditsService:
     TOKEN_NAME = "WaterCredits"
     TOKEN_SYMBOL = "WC"
     TOKEN_DESCRIPTION = "Blockchain-based water management token. 1 WC = 1 liter of water usage rights."
-    TOKEN_IMAGE_URL = "http://localhost:8000/static/watercredits-logo.svg"
-    TOKEN_METADATA_URL = "http://localhost:8000/static/watercredits-metadata.json"
+    TOKEN_IMAGE_URL = os.getenv("TOKEN_IMAGE_URL", "http://localhost:8000/static/watercredits-logo.svg")
+    TOKEN_METADATA_URL = os.getenv("TOKEN_METADATA_URL", "http://localhost:8000/static/watercredits-metadata.json")
 
     def __init__(self):
         self.client = Client(settings.solana_rpc_url, commitment=Confirmed)
