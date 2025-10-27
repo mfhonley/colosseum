@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { api } from './services/api';
+import Landing from './components/Landing';
 import RoleSelection from './components/RoleSelection';
 import ModernFarmerDashboard from './components/FarmerDashboard.modern';
 import ModernProviderDashboard from './components/ProviderDashboard.modern';
@@ -7,6 +8,7 @@ import { Icon } from './components/Icons';
 import { LoadingSpinner } from './components/UI';
 
 function App() {
+  const [showLanding, setShowLanding] = useState(true); // Show landing first
   const [role, setRole] = useState(null); // 'farmer' or 'provider'
   const [selectedFarmId, setSelectedFarmId] = useState(1);
   const [dashboardData, setDashboardData] = useState(null);
@@ -47,6 +49,16 @@ function App() {
     setDashboardData(null);
   };
 
+  const handleGetStarted = () => {
+    setShowLanding(false);
+  };
+
+  // Show landing page first
+  if (showLanding) {
+    return <Landing onGetStarted={handleGetStarted} />;
+  }
+
+  // Then show role selection
   if (!role) {
     return <RoleSelection onSelectRole={handleRoleSelect} />;
   }
