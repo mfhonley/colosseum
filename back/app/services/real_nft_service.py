@@ -64,13 +64,8 @@ class ProductionNFTService:
 
             # If on devnet and low balance, request airdrop
             if "devnet" in settings.solana_rpc_url and balance < 100_000_000:  # < 0.1 SOL
-                logger.info("💸 Requesting airdrop (2 SOL)...")
-                airdrop_sig = self.client.request_airdrop(self.authority.pubkey(), 2_000_000_000)
-                logger.info(f"   Airdrop signature: {airdrop_sig.value}")
-
-                # Confirm airdrop
-                self.client.confirm_transaction(airdrop_sig.value, commitment=Confirmed)
-                logger.info("✅ Airdrop confirmed!")
+                logger.warning("⚠️  Low balance!")
+                logger.warning(f"   Please fund manually: {self.authority.pubkey()}")
 
         except Exception as e:
             logger.error(f"Error checking balance: {e}")

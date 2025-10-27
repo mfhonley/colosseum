@@ -222,19 +222,38 @@ class WaterCreditsService:
 
             recent_blockhash = self.client.get_latest_blockhash().value.blockhash
 
-            # Create ATA if doesn't exist
-            create_ata_ix = Instruction(
-                program_id=self.ASSOCIATED_TOKEN_PROGRAM_ID,
-                accounts=[
-                    AccountMeta(pubkey=self.authority.pubkey(), is_signer=True, is_writable=True),
-                    AccountMeta(pubkey=ata, is_signer=False, is_writable=True),
-                    AccountMeta(pubkey=self.authority.pubkey(), is_signer=False, is_writable=False),
-                    AccountMeta(pubkey=self.watercredits_mint, is_signer=False, is_writable=False),
-                    AccountMeta(pubkey=self.SYSTEM_PROGRAM_ID, is_signer=False, is_writable=False),
-                    AccountMeta(pubkey=self.TOKEN_PROGRAM_ID, is_signer=False, is_writable=False),
-                ],
-                data=bytes([])
+            # Check if ATA exists
+            ata_exists = False
+            try:
+                ata_info = self.client.get_account_info(ata)
+                ata_exists = ata_info.value is not None
+                if ata_exists:
+                    logger.info(f"   ATA already exists: {ata}")
+            except:
+                pass
+
+            # Build transaction
+            tx = Transaction(
+                fee_payer=self.authority.pubkey(),
+                recent_blockhash=recent_blockhash
             )
+
+            # Create ATA if doesn't exist
+            if not ata_exists:
+                logger.info(f"   Creating ATA: {ata}")
+                create_ata_ix = Instruction(
+                    program_id=self.ASSOCIATED_TOKEN_PROGRAM_ID,
+                    accounts=[
+                        AccountMeta(pubkey=self.authority.pubkey(), is_signer=True, is_writable=True),
+                        AccountMeta(pubkey=ata, is_signer=False, is_writable=True),
+                        AccountMeta(pubkey=self.authority.pubkey(), is_signer=False, is_writable=False),
+                        AccountMeta(pubkey=self.watercredits_mint, is_signer=False, is_writable=False),
+                        AccountMeta(pubkey=self.SYSTEM_PROGRAM_ID, is_signer=False, is_writable=False),
+                        AccountMeta(pubkey=self.TOKEN_PROGRAM_ID, is_signer=False, is_writable=False),
+                    ],
+                    data=bytes([])
+                )
+                tx.add(create_ata_ix)
 
             # Mint instruction
             mint_to_data = struct.pack("<B Q", 7, amount_units)  # 7 = MintTo
@@ -247,19 +266,6 @@ class WaterCreditsService:
                 ],
                 data=mint_to_data
             )
-
-            # Build transaction
-            tx = Transaction(
-                fee_payer=self.authority.pubkey(),
-                recent_blockhash=recent_blockhash
-            )
-
-            # Try to create ATA (will fail silently if exists)
-            try:
-                tx.add(create_ata_ix)
-            except:
-                pass
-
             tx.add(mint_to_ix)
 
             # Send

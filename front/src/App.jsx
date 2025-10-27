@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { api } from './services/api';
 import RoleSelection from './components/RoleSelection';
-import ImprovedFarmerDashboard from './components/ImprovedFarmerDashboard';
-import ProviderDashboard from './components/ProviderDashboard';
+import ModernFarmerDashboard from './components/FarmerDashboard.modern';
+import ModernProviderDashboard from './components/ProviderDashboard.modern';
+import { Icon } from './components/Icons';
+import { LoadingSpinner } from './components/UI';
 
 function App() {
   const [role, setRole] = useState(null); // 'farmer' or 'provider'
@@ -52,10 +54,7 @@ function App() {
   if (loading && !dashboardData) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading dashboard...</p>
-        </div>
+        <LoadingSpinner size="lg" text="Loading dashboard..." />
       </div>
     );
   }
@@ -63,12 +62,15 @@ function App() {
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md">
-          <div className="text-red-600 text-xl mb-4">⚠️ Connection Error</div>
-          <p className="text-gray-700 mb-4">{error}</p>
+        <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-lg max-w-md">
+          <div className="flex items-center text-red-600 text-xl font-bold mb-4">
+            <Icon.Alert className="w-6 h-6 mr-2" />
+            Connection Error
+          </div>
+          <p className="text-gray-700 mb-6">{error}</p>
           <button
             onClick={handleBackToSelection}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 font-medium transition-colors"
           >
             Back to Role Selection
           </button>
@@ -80,14 +82,14 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       {role === 'farmer' ? (
-        <ImprovedFarmerDashboard
+        <ModernFarmerDashboard
           farmId={selectedFarmId}
           dashboardData={dashboardData}
           onRefresh={loadDashboard}
           onBack={handleBackToSelection}
         />
       ) : (
-        <ProviderDashboard
+        <ModernProviderDashboard
           dashboardData={dashboardData}
           onRefresh={loadDashboard}
           onBack={handleBackToSelection}

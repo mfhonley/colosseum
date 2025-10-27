@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#3b82f6"/>
+
+  <!-- Water droplet -->
+  <path d="M50 20 C50 20, 35 40, 35 55 C35 65, 42 72, 50 72 C58 72, 65 65, 65 55 C65 40, 50 20, 50 20 Z"
+        fill="#ffffff"
+        opacity="0.95"/>
+
+  <!-- Highlight on droplet -->
+  <ellipse cx="45" cy="45" rx="6" ry="8" fill="#ffffff" opacity="0.4"/>
+
+  <!-- Small waves at bottom -->
+  <path d="M30 75 Q35 73, 40 75 T50 75 T60 75 T70 75"
+        stroke="#ffffff"
+        stroke-width="2"
+        fill="none"
+        opacity="0.6"/>
+</svg>
