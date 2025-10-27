@@ -1,0 +1,32 @@
+=== SuCount Water Management ===
+
+🚀 БЫСТРЫЙ СТАРТ:
+
+1. Запустить всё:
+   docker-compose up -d --build
+
+2. Открыть в браузере:
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:8000/docs
+
+3. Логи:
+   docker-compose logs -f
+
+4. Остановить:
+   docker-compose down
+
+===================================
+
+СТРУКТУРА:
+back/   - Backend (FastAPI + Oracle)
+front/  - Frontend (HTML/JS)
+data/   - Database
+
+===================================
+
+ЧТО ЗАПУСКАЕТСЯ:
+✅ Backend API (порт 8000)
+✅ ML Oracle (автоматически)
+✅ Frontend Dashboard (порт 3000)
+
+===================================
