@@ -239,7 +239,12 @@ All transactions verifiable on Solana Explorer ✅
 
 ---
 
-**Ports:**
-- Frontend: http://localhost:5173
-- Backend: http://localhost:8000
+**Ports (DEV):**
+- Frontend Dev: http://localhost:5173 (npm run dev)
+- Backend Dev: http://localhost:8000 (local)
 - API Docs: http://localhost:8000/docs
+
+**Ports (PROD - Docker):**
+- Frontend: http://localhost:8473
+- Backend: http://localhost:7483
+- API Docs: http://localhost:7483/docs

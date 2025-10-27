@@ -46,7 +46,7 @@ services:
       dockerfile: Dockerfile.prod
     container_name: sucount-frontend
     ports:
-      - "3000:80"
+      - "8473:80"
     networks:
       - sucount-network
     restart: unless-stopped
