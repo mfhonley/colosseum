@@ -172,7 +172,7 @@ function ModernFarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                 value={`${usagePercentage.toFixed(1)}%`}
                 subValue={isWithinLimit ? 'Within limit' : 'Over limit'}
                 icon={Icon.Chart}
-                color={isWithinLimit ? 'green' : 'red'}
+                color={isWithinLimit ? 'cyan' : 'red'}
               />
               <StatCard
                 label="Tokens Available"
@@ -230,7 +230,7 @@ function ModernFarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                 <Progress
                   value={farmStats.total_water_used}
                   max={farmStats.water_limit}
-                  color={isWithinLimit ? 'green' : 'red'}
+                  color={isWithinLimit ? 'cyan' : 'red'}
                   showLabel={true}
                 />
                 <div className="flex justify-between mt-2 text-sm text-gray-600">
@@ -307,7 +307,7 @@ function ModernFarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                     value={balance.total_minted.toLocaleString()}
                     subValue="tokens allocated"
                     icon={Icon.Plus}
-                    color="green"
+                    color="cyan"
                   />
                 </div>
 
@@ -464,7 +464,7 @@ function ModernFarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                             </div>
                             <div className="bg-gray-50 p-3 rounded-lg border border-gray-200">
                               <div className="text-xs text-gray-500 mb-1">Efficiency</div>
-                              <div className="text-lg font-bold text-green-600">
+                              <div className="text-lg font-bold text-cyan-600">
                                 {nft.metadata.attributes?.find(a => a.trait_type === 'Efficiency Score')?.value || `${(nft.metadata.efficiency_score * 100).toFixed(0)}%`}
                               </div>
                             </div>

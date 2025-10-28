@@ -17,7 +17,7 @@ export const Button = ({
   const variants = {
     primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
     secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500',
-    success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500',
+    success: 'bg-cyan-600 text-white hover:bg-cyan-700 focus:ring-cyan-500',
     danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
     ghost: 'bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
   };
@@ -65,7 +65,7 @@ export const StatCard = ({
 }) => {
   const colors = {
     blue: 'bg-blue-50 text-blue-600 border-blue-200',
-    green: 'bg-green-50 text-green-600 border-green-200',
+    cyan: 'bg-cyan-50 text-cyan-600 border-cyan-200',
     purple: 'bg-purple-50 text-purple-600 border-purple-200',
     red: 'bg-red-50 text-red-600 border-red-200',
     gray: 'bg-gray-50 text-gray-600 border-gray-200',
@@ -85,7 +85,7 @@ export const StatCard = ({
         <div className="text-3xl font-bold text-gray-900 mb-1">{value}</div>
         {subValue && <div className="text-sm text-gray-500">{subValue}</div>}
         {trend && (
-          <div className={`text-xs font-medium mt-2 ${trend > 0 ? 'text-green-600' : 'text-red-600'}`}>
+          <div className={`text-xs font-medium mt-2 ${trend > 0 ? 'text-cyan-600' : 'text-red-600'}`}>
             {trend > 0 ? '↑' : '↓'} {Math.abs(trend)}%
           </div>
         )}
@@ -98,7 +98,7 @@ export const StatCard = ({
 export const Badge = ({ children, variant = 'default', size = 'md' }) => {
   const variants = {
     default: 'bg-gray-100 text-gray-800',
-    success: 'bg-green-100 text-green-800',
+    success: 'bg-cyan-100 text-cyan-800',
     warning: 'bg-yellow-100 text-yellow-800',
     danger: 'bg-red-100 text-red-800',
     info: 'bg-blue-100 text-blue-800',
@@ -217,7 +217,7 @@ export const LoadingSpinner = ({ size = 'md', text }) => {
 export const Alert = ({ variant = 'info', title, children, onClose }) => {
   const variants = {
     info: 'bg-blue-50 border-blue-200 text-blue-800',
-    success: 'bg-green-50 border-green-200 text-green-800',
+    success: 'bg-cyan-50 border-cyan-200 text-cyan-800',
     warning: 'bg-yellow-50 border-yellow-200 text-yellow-800',
     error: 'bg-red-50 border-red-200 text-red-800',
   };
@@ -256,7 +256,7 @@ export const Progress = ({ value, max = 100, color = 'blue', showLabel = false }
 
   const colors = {
     blue: 'bg-blue-600',
-    green: 'bg-green-600',
+    cyan: 'bg-cyan-600',
     red: 'bg-red-600',
     yellow: 'bg-yellow-600',
   };

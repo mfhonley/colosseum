@@ -1,12 +1,12 @@
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
-const COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899', '#14B8A6', '#F97316', '#06B6D4', '#84CC16'];
+const COLORS = ['#06B6D4', '#3B82F6', '#0EA5E9', '#0284C7', '#0369A1', '#0C4A6E', '#22D3EE', '#67E8F9', '#A5F3FC', '#BAE6FD'];
 
 function ProviderDashboard({ dashboardData, onRefresh, onBack }) {
   if (!dashboardData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-600"></div>
       </div>
     );
   }
@@ -51,7 +51,7 @@ function ProviderDashboard({ dashboardData, onRefresh, onBack }) {
             </div>
             <button
               onClick={onRefresh}
-              className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+              className="bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700"
             >
               🔄 Refresh
             </button>
@@ -78,21 +78,21 @@ function ProviderDashboard({ dashboardData, onRefresh, onBack }) {
             <div className="text-2xl font-bold text-gray-900">
               {((total_water_used / total_limit) * 100).toFixed(1)}%
             </div>
-            <div className={`text-xs mt-1 ${overall_status === 'economy' ? 'text-green-600' : 'text-red-600'}`}>
+            <div className={`text-xs mt-1 ${overall_status === 'economy' ? 'text-cyan-600' : 'text-red-600'}`}>
               {overall_status === 'economy' ? '✓ Within limits' : '⚠ Over budget'}
             </div>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow">
             <div className="text-sm text-gray-600 mb-1">Active Farms</div>
-            <div className="text-2xl font-bold text-green-600">{farms.length}</div>
+            <div className="text-2xl font-bold text-cyan-600">{farms.length}</div>
             <div className="text-xs text-gray-500 mt-1">monitoring</div>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow">
             <div className="text-sm text-gray-600 mb-1">Status</div>
             <div className="flex items-center space-x-2 mt-2">
-              <div className="text-green-600">
+              <div className="text-cyan-600">
                 ✓ {statusCounts.economy}
               </div>
               <div className="text-red-600">
@@ -188,7 +188,7 @@ function ProviderDashboard({ dashboardData, onRefresh, onBack }) {
                         <div className="ml-2 w-16 bg-gray-200 rounded-full h-2">
                           <div
                             className={`h-2 rounded-full ${
-                              farm.percentage_used > 100 ? 'bg-red-600' : 'bg-green-600'
+                              farm.percentage_used > 100 ? 'bg-red-600' : 'bg-cyan-600'
                             }`}
                             style={{ width: `${Math.min(farm.percentage_used, 100)}%` }}
                           ></div>
@@ -203,7 +203,7 @@ function ProviderDashboard({ dashboardData, onRefresh, onBack }) {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                         farm.status === 'economy'
-                          ? 'bg-green-100 text-green-800'
+                          ? 'bg-cyan-100 text-cyan-800'
                           : 'bg-red-100 text-red-800'
                       }`}>
                         {farm.status}

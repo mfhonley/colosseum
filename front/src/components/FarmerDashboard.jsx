@@ -72,8 +72,8 @@ function FarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
     temp: record.temperature_c,
   }));
 
-  const statusColor = farmStats.status === 'economy' ? 'text-green-600' : 'text-red-600';
-  const statusBg = farmStats.status === 'economy' ? 'bg-green-100' : 'bg-red-100';
+  const statusColor = farmStats.status === 'economy' ? 'text-cyan-600' : 'text-red-600';
+  const statusBg = farmStats.status === 'economy' ? 'bg-cyan-100' : 'bg-red-100';
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -215,9 +215,9 @@ function FarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                   <div className="text-xs text-gray-500 mt-1">tokens burned</div>
                 </div>
 
-                <div className="text-center p-6 bg-green-50 rounded-lg">
+                <div className="text-center p-6 bg-cyan-50 rounded-lg">
                   <div className="text-sm text-gray-600 mb-2">Total Minted</div>
-                  <div className="text-3xl font-bold text-green-600">
+                  <div className="text-3xl font-bold text-cyan-600">
                     {balance.total_minted.toLocaleString()}
                   </div>
                   <div className="text-xs text-gray-500 mt-1">tokens allocated</div>
@@ -295,7 +295,7 @@ function FarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                           </div>
                           <div className="bg-white p-2 rounded border border-gray-200">
                             <div className="text-xs text-gray-500">Efficiency</div>
-                            <div className="text-sm font-bold text-green-600">
+                            <div className="text-sm font-bold text-cyan-600">
                               {nft.metadata.attributes?.find(a => a.trait_type === 'Efficiency Score')?.value || `${(nft.metadata.efficiency_score * 100).toFixed(0)}%`}
                             </div>
                           </div>
