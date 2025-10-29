@@ -1,6 +1,16 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+// STRICT: Only use .env variable, no fallback to localhost
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+if (!API_BASE_URL) {
+  throw new Error(
+    'VITE_API_URL is not defined in .env file! ' +
+    'Please set VITE_API_URL in front/.env before building.'
+  );
+}
+
+console.log('[API] Using API URL:', API_BASE_URL);
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,

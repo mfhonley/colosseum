@@ -24,7 +24,7 @@ function App() {
       setDashboardData(data);
     } catch (err) {
       console.error('Failed to load dashboard:', err);
-      setError('Failed to connect to backend. Make sure API is running on http://localhost:8000');
+      setError(`Failed to connect to backend API. Please check if the backend service is running.`);
     } finally {
       setLoading(false);
     }
