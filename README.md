@@ -48,7 +48,7 @@ Agriculture consumes **70% of global freshwater resources**, yet the sector face
 
 **Impact:**
 - 2.5 billion people face water scarcity
-- 20-40% of agricultural water is wasted
+- 40-60% of agricultural water is wasted
 - Farmers have no visibility into their consumption patterns
 
 ---
