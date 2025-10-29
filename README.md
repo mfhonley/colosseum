@@ -1,4 +1,4 @@
-# SuCount - Blockchain Water Management on Solana
+# 🌊 SuCount - Blockchain Water Management on Solana
 
 **Transforming Agricultural Water Management through Blockchain Transparency**
 
@@ -33,7 +33,7 @@ SuCount is a decentralized water quota management system built on Solana that to
 
 ---
 
-## 🌊 The Problem
+## The Problem
 
 ### Global Water Crisis in Agriculture
 
@@ -53,11 +53,11 @@ Agriculture consumes **70% of global freshwater resources**, yet the sector face
 
 ---
 
-## ✨ Our Solution
+## 💡 Our Solution
 
 SuCount brings blockchain transparency to water management through three core innovations:
 
-### 1. 💧 WaterCredits Token (SPL Token)
+### 1. WaterCredits Token (SPL Token)
 
 - **1 WC = 1 Liter** of water quota
 - Fully fungible SPL token with 6 decimals
@@ -69,14 +69,14 @@ Token Mint: Dq53uysBgXgQYiMoBSBJJXDFYjq7DqBRTXumQhBr3n1u
 Network: Solana Devnet
 ```
 
-### 2. 📡 IoT Oracle Integration
+### 2. IoT Oracle Integration
 
 - Real-time water consumption monitoring via IoT sensors
 - Oracle service posts data on-chain **every 30 seconds**
 - Automatic token burning based on actual usage
 - Simulating 10 active farms with live data
 
-### 3. 🏆 NFT Certificates (Incentive System)
+### 3. NFT Certificates (Incentive System)
 
 - Unique NFT rewards for farmers achieving >85% efficiency
 - Supply = 1 (each certificate is unique)
@@ -85,28 +85,28 @@ Network: Solana Devnet
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
 ### For Farmers
-- ✅ Real-time water consumption dashboard
-- ✅ On-chain balance tracking (WaterCredits)
-- ✅ NFT certificate minting for efficiency
-- ✅ Usage history and analytics
-- ✅ Blockchain transaction verification
+- Real-time water consumption dashboard
+- On-chain balance tracking (WaterCredits)
+- NFT certificate minting for efficiency
+- Usage history and analytics
+- Blockchain transaction verification
 
 ### For Water Providers
-- ✅ Monitor all farms in one dashboard
-- ✅ Mint monthly water quotas to farmers
-- ✅ View consumption patterns and trends
-- ✅ Identify over-users and efficient farmers
-- ✅ Generate usage reports
+- Monitor all farms in one dashboard
+- Mint monthly water quotas to farmers
+- View consumption patterns and trends
+- Identify over-users and efficient farmers
+- Generate usage reports
 
 ### Technical Highlights
-- ✅ **Real Solana Integration** - Not a simulation, actual blockchain transactions
-- ✅ **Production Deployment** - Live on HTTPS with custom domain
-- ✅ **Professional UI/UX** - Modern React dashboard with real-time updates
-- ✅ **Complete API** - RESTful API with FastAPI
-- ✅ **Docker Infrastructure** - Containerized services for easy deployment
+- **Real Solana Integration** - Not a simulation, actual blockchain transactions
+- **Production Deployment** - Live on HTTPS with custom domain
+- **Professional UI/UX** - Modern React dashboard with real-time updates
+- **Complete API** - RESTful API with FastAPI
+- **Docker Infrastructure** - Containerized services for easy deployment
 
 ---
 
