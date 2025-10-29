@@ -10,7 +10,7 @@ SuCount is a decentralized water quota management system built on Solana that to
 
 ---
 
-## Submission by
+## Submission to 2025 Solana Colosseum Submission by:
 
 **Team Members:**
 - **Your Name** - [GitHub](https://github.com/mfhonley) | [Twitter](https://twitter.com/mfhonley) | [LinkedIn](https://linkedin.com/in/mfhonley)
@@ -39,10 +39,12 @@ SuCount is a decentralized water quota management system built on Solana that to
 
 Agriculture consumes **70% of global freshwater resources**, yet the sector faces critical challenges:
 
-- **🚨 No Transparency**: Manual tracking, paper records, zero real-time visibility into water consumption
-- **📉 Inefficient Allocation**: Static quotas that don't adapt to actual usage patterns
-- **❌ No Incentives**: Farmers lack rewards for water conservation and efficiency
-- **💰 Economic Loss**: Over-allocation and waste lead to resource depletion and conflicts
+- **No Transparency**: Manual tracking, paper records, zero real-time visibility into water consumption
+- **Inefficient Allocation**: Static quotas that don't adapt to actual usage patterns
+- **No Incentives**: Farmers lack rewards for water conservation and efficiency
+- **Economic Loss**: Over-allocation and waste lead to resource depletion and conflicts
+  
+![SuCount Banner](./assets/graph.png)
 
 **Impact:**
 - 2.5 billion people face water scarcity
