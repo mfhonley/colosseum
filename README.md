@@ -110,65 +110,6 @@ Network: Solana Devnet
 
 ---
 
-## 🏗️ Architecture
-
-![Architecture Diagram](./assets/architecture.png)
-
-### System Flow
-
-```
-┌─────────────┐
-│  IoT Sensor │ (Water meter on farm)
-└──────┬──────┘
-       │
-       ↓ (consumption data)
-┌──────────────┐
-│ Oracle Service│ (Every 30 seconds)
-└──────┬───────┘
-       │
-       ↓ (POST /api/water-usage)
-┌────────────────┐
-│  Backend API   │ (FastAPI)
-│  - Record usage│
-│  - Burn tokens │
-└────────┬───────┘
-         │
-         ↓ (Solana transactions)
-┌─────────────────┐
-│  Solana Devnet  │
-│  - WaterCredits │
-│  - NFT Certs    │
-└─────────────────┘
-         ↑
-         │ (Query balance)
-┌─────────────────┐
-│   React UI      │
-│  - Farmer View  │
-│  - Provider View│
-└─────────────────┘
-```
-
-### User Journey
-
-**Monthly Allocation:**
-1. Provider mints 100,000 WC tokens to farmer
-2. Farmer receives tokens in Solana wallet
-3. All transactions visible on Solana Explorer
-
-**Daily Usage:**
-1. Farmer uses water for irrigation
-2. IoT sensor measures consumption (e.g., 250 liters)
-3. Oracle posts data to backend every 30 seconds
-4. Backend burns 250 WC tokens from farmer's wallet
-5. Balance updates in real-time on dashboard
-
-**Monthly Rewards:**
-1. End of month: system calculates efficiency score
-2. If efficiency > 85%: mint unique NFT certificate
-3. Farmer receives on-chain proof of sustainability
-
----
-
 ## 🛠️ Tech Stack
 
 ### Blockchain
@@ -194,6 +135,13 @@ Network: Solana Devnet
 - **Nginx** - Reverse proxy
 - **Let's Encrypt** - SSL certificates
 - **VPS Deployment** - Production hosting
+  
+---
+
+## 🏗️ Architecture
+
+![Architecture Diagram](./assets/architecture.png)
+
 
 ---
 
@@ -239,12 +187,6 @@ docker-compose ps
 docker-compose logs -f
 ```
 
-### Access the Application
-
-- **Frontend**: http://localhost:8473
-- **Backend API**: http://localhost:7483
-- **API Docs**: http://localhost:7483/docs
-
 ### Create WaterCredits Token (First Time)
 
 ```bash
@@ -260,7 +202,7 @@ docker-compose restart backend
 
 ---
 
-## 🔐 Program Information
+## Program Information
 
 ### Deployed Contracts
 
@@ -283,77 +225,7 @@ docker-compose restart backend
 }
 ```
 
----
 
-## 📊 Live Demo Walkthrough
-
-### 1. Farmer Dashboard
-
-**Access:** https://sucount.site → Select "I'm a Farmer" → Choose Farm ID
-
-**Features:**
-- **Overview Tab**: Real-time stats, blockchain status, water usage
-- **WaterCredits Tab**: Mint quota, check on-chain balance
-- **NFT Certificates Tab**: Mint efficiency awards
-- **History Tab**: Complete usage logs
-
-**Demo Actions:**
-```bash
-# Mint 100,000 WC tokens to Farmer #1
-curl -X POST "https://api.sucount.site/api/watercredits/mint-quota?farm_id=1&amount=100000"
-
-# Check on-chain balance
-curl "https://api.sucount.site/api/watercredits/balance/1"
-
-# Mint NFT certificate (if efficiency > 85%)
-curl -X POST "https://api.sucount.site/api/nft/mint?farm_id=1&water_consumed=5000&efficiency_score=0.95"
-```
-
-### 2. Provider Dashboard
-
-**Access:** https://sucount.site → Select "I'm a Water Provider"
-
-**Features:**
-- Monitor all 10 farms simultaneously
-- Bar chart: water consumption per farm
-- Pie chart: distribution breakdown
-- Usage table with efficiency scores
-- Recent activity feed
-
-### 3. Verify on Blockchain
-
-All transactions are verifiable on Solana Explorer:
-
-- **Token**: https://explorer.solana.com/address/Dq53uysBgXgQYiMoBSBJJXDFYjq7DqBRTXumQhBr3n1u?cluster=devnet
-- **Transactions**: View mint, burn, transfer operations
-- **NFT Certificates**: Each NFT has unique on-chain metadata
-
----
-
-## 🌍 Impact & Scalability
-
-### Real-World Impact
-
-- **2.5 billion people** experience water scarcity globally
-- **70% of freshwater** used by agriculture
-- **20-40% efficiency gains** possible with proper monitoring
-- **$200B+ market** for agricultural water management
-
-### Scalability
-
-- **Solana Capacity**: 65,000 TPS easily supports millions of farms
-- **Oracle Efficiency**: 30-second intervals × batch processing
-- **Low Transaction Costs**: ~$0.00025 per transaction on Solana
-- **Global Deployment**: Works in any water-scarce region
-
-### Next Steps
-
-1. **Mainnet Deployment** - Move from Devnet to Solana Mainnet
-2. **Real IoT Hardware** - Partner with LoRa/GSM sensor manufacturers
-3. **Token Marketplace** - Enable farmers to trade water quotas
-4. **DeFi Integration** - Collateral, lending, derivatives for WC tokens
-5. **Geographic Expansion** - Pilot programs in water-scarce regions
-6. **Carbon Credits** - Expand to other resource tokens (energy, carbon)
 
 ---
 
@@ -371,83 +243,4 @@ All transactions are verifiable on Solana Explorer:
 ### Blockchain Transaction
 ![Solana Explorer](./assets/solana-explorer.png)
 
----
 
-## 🧪 Testing
-
-```bash
-# Run backend tests
-cd back
-poetry install
-poetry run pytest
-
-# Test API endpoints
-curl http://localhost:7483/api/health
-curl http://localhost:7483/api/dashboard
-curl http://localhost:7483/api/watercredits/info
-
-# Test Oracle simulation
-docker-compose logs -f oracle
-```
-
----
-
-## 📚 API Documentation
-
-Full API documentation available at: **https://api.sucount.site/docs**
-
-### Key Endpoints
-
-```
-GET  /api/health                    - Health check
-GET  /api/dashboard                 - All farms overview
-GET  /api/farms/{farm_id}/balance   - Farm water balance
-POST /api/watercredits/mint-quota   - Mint WC tokens
-GET  /api/watercredits/balance/{id} - On-chain balance
-POST /api/nft/mint                  - Mint NFT certificate
-GET  /api/watercredits/info         - Token metadata
-```
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **Solana Foundation** - For the incredible blockchain infrastructure
-- **Colosseum** - For organizing this hackathon
-- **FastAPI & React Teams** - For amazing developer tools
-- **Water.org & UN SDG 6** - For inspiration to tackle water scarcity
-
----
-
-## 📞 Contact
-
-- **Email**: mfhonley@gmail.com
-- **Twitter**: [@mfhonley](#)
-
----
-
-<div align="center">
-
-**Built with 💧 on Solana for Colosseum Hackathon 2025**
-
-[Live Demo](https://sucount.site) • [Documentation](https://api.sucount.site/docs) • [Solana Explorer](https://explorer.solana.com/address/Dq53uysBgXgQYiMoBSBJJXDFYjq7DqBRTXumQhBr3n1u?cluster=devnet)
-
-</div>
