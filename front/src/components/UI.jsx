@@ -199,16 +199,59 @@ export const EmptyState = ({ icon: IconComponent, title, description, action }) 
 
 // Loading Spinner
 export const LoadingSpinner = ({ size = 'md', text }) => {
-  const sizes = {
-    sm: 'h-8 w-8',
-    md: 'h-12 w-12',
-    lg: 'h-16 w-16',
+  const sizeClasses = {
+    sm: 'w-8 h-8',
+    md: 'w-12 h-12',
+    lg: 'w-16 h-16',
   };
 
+  const spinnerSize = size === 'sm' ? 32 : size === 'md' ? 48 : 64;
+  const strokeWidth = size === 'sm' ? 3 : 4;
+  const radius = (spinnerSize - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className={`${sizes[size]} border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin`}></div>
-      {text && <p className="mt-4 text-gray-600">{text}</p>}
+    <div className="inline-flex flex-col items-center justify-center gap-4">
+      <div className={`${sizeClasses[size]} relative`} style={{ minWidth: spinnerSize, minHeight: spinnerSize }}>
+        <svg
+          className="absolute top-0 left-0"
+          width={spinnerSize}
+          height={spinnerSize}
+          viewBox={`0 0 ${spinnerSize} ${spinnerSize}`}
+        >
+          {/* Background circle */}
+          <circle
+            cx={spinnerSize / 2}
+            cy={spinnerSize / 2}
+            r={radius}
+            fill="none"
+            stroke="#e5e7eb"
+            strokeWidth={strokeWidth}
+          />
+          {/* Spinning arc */}
+          <circle
+            cx={spinnerSize / 2}
+            cy={spinnerSize / 2}
+            r={radius}
+            fill="none"
+            stroke="#2563eb"
+            strokeWidth={strokeWidth}
+            strokeLinecap="round"
+            strokeDasharray={`${circumference * 0.25} ${circumference * 0.75}`}
+            style={{
+              transformOrigin: 'center',
+              animation: 'spinner-rotate 1s linear infinite'
+            }}
+          />
+        </svg>
+      </div>
+      {text && <p className="text-sm text-gray-600 text-center">{text}</p>}
+      <style>{`
+        @keyframes spinner-rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
     </div>
   );
 };
