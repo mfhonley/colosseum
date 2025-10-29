@@ -116,8 +116,8 @@ function ImprovedFarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
     temp: record.temperature_c,
   }));
 
-  const statusColor = farmStats.status === 'economy' ? 'text-green-600' : 'text-red-600';
-  const statusBg = farmStats.status === 'economy' ? 'bg-green-100' : 'bg-red-100';
+  const statusColor = farmStats.status === 'economy' ? 'text-cyan-600' : 'text-red-600';
+  const statusBg = farmStats.status === 'economy' ? 'bg-cyan-100' : 'bg-red-100';
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -189,7 +189,7 @@ function ImprovedFarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-500">
+              <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-cyan-500">
                 <div className="text-sm text-gray-600 mb-1">Usage</div>
                 <div className="text-3xl font-bold text-gray-900">
                   {farmStats.percentage_used.toFixed(1)}%
@@ -310,13 +310,13 @@ function ImprovedFarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                       </div>
                     </div>
 
-                    <div className="text-center p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-xl border-2 border-green-200">
-                      <div className="text-sm text-green-800 font-semibold mb-2">🪙 Total Minted</div>
-                      <div className="text-4xl font-bold text-green-600 mb-1">
+                    <div className="text-center p-8 bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl border-2 border-cyan-200">
+                      <div className="text-sm text-cyan-800 font-semibold mb-2">🪙 Total Minted</div>
+                      <div className="text-4xl font-bold text-cyan-600 mb-1">
                         {balance.total_minted.toLocaleString()}
                       </div>
-                      <div className="text-xs text-green-700 font-medium">tokens allocated</div>
-                      <div className="mt-3 text-xs text-green-600">
+                      <div className="text-xs text-cyan-700 font-medium">tokens allocated</div>
+                      <div className="mt-3 text-xs text-cyan-600">
                         Monthly quota
                       </div>
                     </div>
@@ -476,7 +476,7 @@ function ImprovedFarmerDashboard({ farmId, dashboardData, onRefresh, onBack }) {
                           </div>
                           <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
                             <div className="text-xs text-gray-500 mb-1">Efficiency</div>
-                            <div className="text-lg font-bold text-green-600">
+                            <div className="text-lg font-bold text-cyan-600">
                               {nft.metadata.attributes?.find(a => a.trait_type === 'Efficiency Score')?.value || `${(nft.metadata.efficiency_score * 100).toFixed(0)}%`}
                             </div>
                           </div>

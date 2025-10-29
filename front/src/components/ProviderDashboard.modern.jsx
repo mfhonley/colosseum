@@ -102,7 +102,7 @@ function ModernProviderDashboard({ dashboardData, onRefresh, onBack }) {
               </div>
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                  <Icon.Check className="w-5 h-5 text-green-600" />
+                  <Icon.Check className="w-5 h-5 text-cyan-600" />
                   <span className="text-lg font-bold text-gray-900">{statusCounts.economy}</span>
                 </div>
                 <div className="flex items-center space-x-2">

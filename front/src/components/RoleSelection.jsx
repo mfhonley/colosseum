@@ -56,10 +56,10 @@ function RoleSelection({ onSelectRole }) {
           </div>
 
           {/* Provider Role */}
-          <div className="border-2 border-gray-200 rounded-xl p-6 hover:border-green-500 transition-all hover:shadow-lg group">
+          <div className="border-2 border-gray-200 rounded-xl p-6 hover:border-cyan-500 transition-all hover:shadow-lg group">
             <div className="text-center mb-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-50 rounded-full mb-4 group-hover:bg-green-100 transition-colors">
-                <Icon.Water className="w-8 h-8 text-green-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-50 rounded-full mb-4 group-hover:bg-cyan-100 transition-colors">
+                <Icon.Water className="w-8 h-8 text-cyan-600" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Water Provider</h2>
               <p className="text-gray-600 text-sm mb-4">
@@ -69,22 +69,22 @@ function RoleSelection({ onSelectRole }) {
 
             <div className="space-y-2 mb-4 text-sm text-gray-600">
               <div className="flex items-center">
-                <Icon.Check className="w-4 h-4 text-green-600 mr-2" />
+                <Icon.Check className="w-4 h-4 text-cyan-600 mr-2" />
                 <span>View all 10 farms overview</span>
               </div>
               <div className="flex items-center">
-                <Icon.Check className="w-4 h-4 text-green-600 mr-2" />
+                <Icon.Check className="w-4 h-4 text-cyan-600 mr-2" />
                 <span>Monitor total water consumption</span>
               </div>
               <div className="flex items-center">
-                <Icon.Check className="w-4 h-4 text-green-600 mr-2" />
+                <Icon.Check className="w-4 h-4 text-cyan-600 mr-2" />
                 <span>Manage water quotas</span>
               </div>
             </div>
 
             <button
               onClick={() => onSelectRole('provider')}
-              className="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors font-medium inline-flex items-center justify-center"
+              className="w-full bg-cyan-600 text-white py-3 px-6 rounded-lg hover:bg-cyan-700 transition-colors font-medium inline-flex items-center justify-center"
             >
               <Icon.Water className="w-5 h-5 mr-2" />
               Enter as Provider
