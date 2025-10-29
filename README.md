@@ -13,7 +13,7 @@ SuCount is a decentralized water quota management system built on Solana that to
 ## Submission to 2025 Solana Colosseum Submission by:
 
 **Team Members:**
-- **Your Name** - [GitHub](https://github.com/mfhonley) | [Twitter](https://twitter.com/mfhonley) | [LinkedIn](https://linkedin.com/in/mfhonley)
+- **Zhaniya Baizhan** - [GitHub](https://github.com/mfhonley) | [Twitter](https://x.com/sadbutbot?s=21) | [LinkedIn](https://www.linkedin.com/in/zhaniya-b-745789365)
 - **Igor Martynyuk** - [GitHub](https://github.com/IgorBlink) | [Twitter](https://x.com/IgorBlinkk) | [LinkedIn](https://www.linkedin.com/in/igor-martynyuk/)
 - **Zhan Beissikeyev** - [GitHub](https://github.com/mfhonley) | [Twitter](https://x.com/mfhonley) | [LinkedIn](https://www.linkedin.com/in/mfhonley)
 - **Sultan Karilov** - [GitHub](https://github.com/sulta24) | [Twitter](https://x.com/SKarilov48708) | [LinkedIn](https://www.linkedin.com/in/sultan-karilov-a9abb1362/)
@@ -27,7 +27,7 @@ SuCount is a decentralized water quota management system built on Solana that to
 | 🌐 **Live Application** | [https://sucount.site](https://sucount.site) |
 | 📖 **API Documentation** | [https://api.sucount.site/docs](https://api.sucount.site/docs) |
 | 🎥 **Demo Video** | [YouTube Link](#) |
-| 📊 **Pitch Deck** | [Presentation Link](#) |
+| 📊 **Pitch Deck** | [Presentation Link](https://www.canva.com/design/DAG29vrS2JI/fML_vFLfrNLC7JfF7juSxg/view?utm_content=DAG29vrS2JI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6f1e32c923) |
 | 🔍 **Token on Explorer** | [View on Solana Explorer](https://explorer.solana.com/address/Dq53uysBgXgQYiMoBSBJJXDFYjq7DqBRTXumQhBr3n1u?cluster=devnet) |
 | 💻 **Source Code** | [GitHub Repository](https://github.com/mfhonley/colosseum) |
 
