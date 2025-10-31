@@ -50,6 +50,9 @@ Agriculture consumes **70% of global freshwater resources**, yet the sector face
 - 2.5 billion people face water scarcity
 - 40-60% of agricultural water is wasted
 - Farmers have no visibility into their consumption patterns
+- According to the World Bank, global water losses amount to over $260 billion annually
+- In Central Asia, up to 90 % of all freshwater is used for irrigation — yet 35–50 % of it is lost before reaching the fields
+- Reducing these losses by just 10 % could save millions of dollars and preserve tens of thousands of hectares of land
 
 ---
 
@@ -59,7 +62,7 @@ SuCount brings blockchain transparency to water management through three core in
 
 ### 1. WaterCredits Token (SPL Token)
 
-- **1 WC = 1 Liter** of water quota
+- **1 WC = 1 cubic meter** of water quota
 - Fully fungible SPL token with 6 decimals
 - **Deflationary model**: Tokens automatically burn on consumption
 - Transferable between farmers (marketplace ready)
