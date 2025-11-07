@@ -79,10 +79,19 @@ function App() {
             <Icon.Alert className="w-6 h-6 mr-2" />
             Connection Error
           </div>
-          <p className="text-gray-700 mb-6">{error}</p>
+          <p className="text-gray-700 mb-4">{error}</p>
+          <a
+            href="https://www.catops.app/status/690db7604873707fbc482e3f"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-700 text-sm mb-6 inline-flex items-center gap-1"
+          >
+            <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+            Check System Status →
+          </a>
           <button
             onClick={handleBackToSelection}
-            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 font-medium transition-colors"
+            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 font-medium transition-colors mt-4"
           >
             Back to Role Selection
           </button>

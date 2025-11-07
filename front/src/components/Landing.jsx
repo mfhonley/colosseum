@@ -328,6 +328,10 @@ const Landing = ({ onGetStarted }) => {
                 <a href="https://explorer.solana.com/address/Dq53uysBgXgQYiMoBSBJJXDFYjq7DqBRTXumQhBr3n1u?cluster=devnet" target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-cyan-600 transition-colors font-medium">
                   Token Explorer
                 </a>
+                <a href="https://www.catops.app/status/690db7604873707fbc482e3f" target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-cyan-600 transition-colors font-medium flex items-center gap-1">
+                  <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  Status
+                </a>
               </div>
             </div>
             <div className="border-t border-white/40 mt-8 pt-8 text-center">
