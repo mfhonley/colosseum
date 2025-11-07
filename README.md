@@ -27,7 +27,7 @@ SuCount is a decentralized water quota management system built on Solana that to
 | 🌐 **Live Application** | [https://sucount.site](https://sucount.site) |
 | 📖 **API Documentation** | [https://api.sucount.site/docs](https://api.sucount.site/docs) |
 | 🟢 **System Status** | [https://www.catops.app/status/690db7604873707fbc482e3f](https://www.catops.app/status/690db7604873707fbc482e3f) |
-| 🎥 **Demo Video** | [YouTube Link](#) |
+| 🎥 **Demo Video** | [YouTube Link](https://www.youtube.com/watch?v=KcqkgPnHjeM) |
 | 📊 **Pitch Deck** | [Presentation Link](https://www.canva.com/design/DAG29vrS2JI/fML_vFLfrNLC7JfF7juSxg/view?utm_content=DAG29vrS2JI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6f1e32c923) |
 | 🔍 **Token on Explorer** | [View on Solana Explorer](https://explorer.solana.com/address/Dq53uysBgXgQYiMoBSBJJXDFYjq7DqBRTXumQhBr3n1u?cluster=devnet) |
 | 💻 **Source Code** | [GitHub Repository](https://github.com/mfhonley/colosseum) |
@@ -51,6 +51,9 @@ Agriculture consumes **70% of global freshwater resources**, yet the sector face
 - 2.5 billion people face water scarcity
 - 40-60% of agricultural water is wasted
 - Farmers have no visibility into their consumption patterns
+- According to the World Bank, global water losses amount to over $260 billion annually
+- In Central Asia, up to 90 % of all freshwater is used for irrigation — yet 35–50 % of it is lost before reaching the fields
+- Reducing these losses by just 10 % could save millions of dollars and preserve tens of thousands of hectares of land
 
 ---
 
